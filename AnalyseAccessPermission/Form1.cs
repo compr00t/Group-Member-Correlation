@@ -74,7 +74,6 @@ namespace AnalyseAccessPermission
             }
 
             error = false;
-
         }
 
         private void addUsers()
