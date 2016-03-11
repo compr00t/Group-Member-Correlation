@@ -34,7 +34,6 @@ namespace AnalyseAccessPermission
                 else
                 {
                     ArrayList same = new ArrayList();
-                    ArrayList diff = new ArrayList();
 
                     foreach (String obj in tmpList)
                     {
@@ -42,23 +41,6 @@ namespace AnalyseAccessPermission
                         {
                             same.Add(obj);
                         }
-                        else
-                        {
-                            diff.Add(obj);
-                        }
-                    }
-
-                    foreach (String obj in filtered)
-                    {
-                        if ((!tmpList.Contains(obj)) && (!diff.Contains(obj)))
-                        {
-                            diff.Add(obj);
-                        }
-                    }
-
-                    foreach (String obj in diff)
-                    {
-                        debugLst.Items.Add(DateTime.Now + " - Removed " + obj);
                     }
 
                     filtered = same;
@@ -74,6 +56,12 @@ namespace AnalyseAccessPermission
             }
 
             error = false;
+
+            lsGroup1.Clear();
+            lsGroup2.Clear();
+            lsGroup3.Clear();
+            lsGroup4.Clear();
+
         }
 
         private void addUsers()
